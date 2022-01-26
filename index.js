@@ -21,13 +21,13 @@ const db = mysql.createPool({
   database: process.env.DATABASE,
 });
 //* db connection established
-db.connect((err) => {
+/*db.connect((err) => {
   if (err) {
     console.log(err);
   } else {
     console.log("mysql Server connected ! ");
   }
-});
+});*/
 function sha512(data) {
   return crypto.createHash("sha512").update(data, "utf-8").digest("hex");
 }
