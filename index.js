@@ -161,7 +161,7 @@ passport.use(
 );
 let value = {};
 const app = express();
-const port = process.env.PORT || 3000;
+const PORT = process.env.PORT || 3000;
 //! changing engine to ejs
 app.set("view engine", "ejs");
 
