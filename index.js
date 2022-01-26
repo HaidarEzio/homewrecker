@@ -14,7 +14,7 @@ dotenv.config({
   path: "./.env",
 });
 //* db creation with credentials
-const db = mysql.createConnection({
+const db = mysql.createPool({
   host: process.env.DATABASE_HOST,
   user: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
@@ -161,7 +161,7 @@ passport.use(
 );
 let value = {};
 const app = express();
-const port = process.env.PORT || 5000;
+const port = process.env.PORT || 3000;
 //! changing engine to ejs
 app.set("view engine", "ejs");
 
@@ -304,5 +304,6 @@ app
 // //? AUTHENTICATION
 
 //? Server Creation
-app.listen(port);
-console.log("Server started at http://localhost:" + port + " Get to work ! ");
+app.listen((port) => {
+  console.log("Server started at " + port + " Get to work ! ");
+});
