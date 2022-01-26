@@ -14,7 +14,7 @@ dotenv.config({
   path: "./.env",
 });
 //* db creation with credentials
-const db = mysql.createPool({
+const db = mysql.createConnection({
   host: process.env.DATABASE_HOST,
   user: process.env.DATABASE_USER,
   password: process.env.DATABASE_PASSWORD,
